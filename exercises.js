@@ -101,3 +101,53 @@ const mnoz = (v, z) => v * z;
 
 console.log(mnoz(4, 8));
 
+
+//Tablice
+let warzywa = ["marchew", "pietruszka", "baklazan"];
+let liczby = [10, 20, 30];
+let mix = ["Ania", 25, true];  //Tablica może mieć różne typy danych
+
+//dostęp do elementów tablicy
+console.log(warzywa[0]);
+
+//operacje na tablicach
+warzywa.push("cukinia"); //dodaje element na końcu tablicy
+warzywa.unshift("papryka");  //dodaje element na początku tablicy
+warzywa.pop(); //usuwa ostatni element tablicy
+warzywa.shift();  //usuwa pierwszy element tablicy
+console.log(warzywa.length);  //sprawdzanie dlugości tablicy
+
+warzywa.forEach((warzywo) => {
+    console.log("Warzywo:", warzywo);
+}); //iteracja przez tablice 
+
+
+//Obiekty
+
+let car = {
+    marka: "Toyota",
+    rok: 2015,
+    czyLubisz: true
+};
+
+//dostęp do obiektów ( . lub [] )
+console.log(car.marka);  //1 metoda
+console.log(car["rok"]);  //2 metoda
+
+//dodawanie/usuwanie wartości z obiektu
+car.kolor = "bialy";
+delete car.czyLubisz;
+
+//obiekt z tablicą
+let osoba2 = {
+    pelneImie: "Anna Nowak",
+    ulubioneFilmy: ["Incepcja", "Interstellar", "Tenet"]
+};
+console.log(osoba2.ulubioneFilmy[1]);  //Interstellar
+
+//obiekt w tablicy
+let osoby = [
+    {imie: "Kasia", wiek: 30},
+    {imie: "Tomek", wiek: 40}
+];
+console.log(osoby[0].imie); //Kasia

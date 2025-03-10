@@ -151,3 +151,28 @@ let osoby = [
     {imie: "Tomek", wiek: 40}
 ];
 console.log(osoby[0].imie); //Kasia
+
+//Asynchroniczność
+    //JavaScript działa jednowątkowo, co oznacza, że wykonuje kod linia po linii. Jeśli jedno zadanie (np. pobieranie danych z serwera) zajmie dużo czasu, cały program musiałby czekać, aż to zadanie się skończy. To by blokowało wszystko inne.
+
+//Przykład problemu synchronicznego kodu:
+console.log("Zaczynam");
+for (let i = 0; i < 1000000000; i++) {}
+console.log("Koniec");  //pętla for zajmuje dużo czasu, dopiero po jej zakończeniu zostanie wypisane "Koniec"
+
+/* Główne sposoby obsługi anynchroniczności: 
+1. setTimeout() -uruchamia kod po pewnym czasie
+2. setIntervak() - powtarza kod co określony czas
+3. Promise - nowoczesny sposób na obsługę asynchronicznego kodu (z .then()).
+4. async/await - jeszcze lepszy sposób na obługę asynchronicznego kodu */
+
+//Przykład z setTimeout()
+console.log("Start");
+
+setTimeout(() => {
+    console.log("to pojawi się dopiero po 2 sekundach");
+}, 2000); //2000 ms = 2s
+
+console.log("Koniec");
+//najpierw wyswietli start, pozniej koniec, a na końcu(bo po 2 sekundach)-To pojawi się po 2 sekundach
+

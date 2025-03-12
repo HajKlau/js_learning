@@ -96,7 +96,7 @@ function dodaj(a, b) {
 
 console.log(dodaj(1,2)); 
 
-//strzałkowa funkcja
+//strzałkowa funkcja (arrow functions)
 const mnoz = (v, z) => v * z;
 
 console.log(mnoz(4, 8));
@@ -176,3 +176,42 @@ setTimeout(() => {
 console.log("Koniec");
 //najpierw wyswietli start, pozniej koniec, a na końcu(bo po 2 sekundach)-To pojawi się po 2 sekundach
 
+//ES6 + nowe funkcje (uzupełnienie)
+
+//przyklad funckji z wartością domyślną
+const przywitaj = (imie = "Gosc") => `Cześć, ${imie} !`;
+
+console.log(przywitaj()); //Cześć Gość!
+console.log(przywitaj("Ania")); //Cześć Ania!
+//Jeżeli użytkownik nie poda warto ści, funkcja użyje Gość jako domyślną
+
+//Destrukturyzacja - szybkie wyciąganie wartości z obiektów i tablic
+const zwierze = {
+    gatunek: "ssak",
+    wiek: 2,
+    rodzaj: "pies"
+};
+
+const { gatunek, rodzaj } = zwierze;
+console.log(gatunek, rodzaj);
+
+//destrukturyzacja tablic
+const zbiorLiczb = [10, 20, 30];
+
+const [pierwsza, druga] = liczby;
+
+console.log(pierwsza, druga);
+
+
+//Spread Operator - rozpakowuje tablice i obiekty do nowych zmiennych
+
+//przykład - kopieowanie tablicy
+const oryginalnaTablica = [1, 2, 3];
+const nowaTablica = [...oryginalnaTablica, 4,5];
+
+console.log(nowaTablica);  //[1,2,3,4,5]
+
+//przykład - kopiowanie obiektu
+const daneOsoby = { imie: "Wioletta", wiek: 45 };
+const noweDaneOsoby = {...daneOsoby, miasto: "Kraków"};
+console.log(noweDaneOsoby);  //imie: "Wioletta", wiek: 45, miasto: "Kraków"
